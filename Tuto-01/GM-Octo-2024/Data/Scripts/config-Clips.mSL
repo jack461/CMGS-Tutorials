@@ -1,0 +1,30 @@
+/*
+    Configuration des Clips
+*/
+var s = stralloc();
+var id = "Configuration des Clips";
+sprintf(s, "%s START", id);
+GM_Log(s);
+
+var z = table(data(
+//=========================================
+
+Table Clips Clear
+        
+ClipDir "WAVES"
+
+
+
+
+
+End
+
+
+//=========================================
+));
+
+
+sprintf(s, "%s END - Res: %d", id, z);
+GM_Log(s);
+
+strfree(s);
