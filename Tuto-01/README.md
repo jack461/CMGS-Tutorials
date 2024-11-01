@@ -6,7 +6,7 @@ The **Octo Project** is basically a concert program, where different composers s
 
 3. Gilles Roussi
 7. Diego Losa
-11. Françis Valery
+11. Francis Valery
 12. Alain Girardot
 13. Jean-Jacques Girardot
 20. Alain Girardot
@@ -15,7 +15,7 @@ Groups 0, 1, 33 are variations of these, using a mix of the provides files.
 
 ## Installing
 
-You need the **CMGS** plug-in, that you can download from the same place, and of course a recent version of **REAPER** (v7.25 or later).
+You need the **CMGS** plug-in, that you can download from the https://github.com/jack461/CMGS directory, and of course a recent version of **REAPER** (v7.25 or later), from http://reaper.fm/download.php.
 
 Check first that your sound card is recognized by REAPER (open the menu "Options > Setting...", and check "Audio > Device").
 
