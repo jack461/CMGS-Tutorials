@@ -15,21 +15,19 @@ Groups 0, 1, 33 are variations of these, using a mix of the provides files.
 
 ## Installing
 
-You need the **CMGS** plug-in, that you can download from the https://github.com/jack461/CMGS directory, and of course a recent version of **REAPER** (v7.25 or later), from http://reaper.fm/download.php.
+You need a recent version of **REAPER** (v7.25 or later), from http://reaper.fm/download.php, and **CMGS**, installed as explained in its README (https://github.com/jack461/CMGS#installation): the folders **CMGS-effects** and **CMGS-data** go into the folders *Effects* and *Data* of the REAPER resource folder.
 
-Check first that your sound card is recognized by REAPER (open the menu "Options > Setting...", and check "Audio > Device").
+Check first that your sound card is recognized by REAPER (open the menu "Options > Settings...", and check "Audio > Device").
 
 > [!IMPORTANT]
 > Some settings may prevent the GameMaster to function correctly. Do check in the "REAPER Preferences" that in "Audio", both "Close audio device when stopped..." options are *not* set, and in "Audio > Playback" that "Run FX when stopped" is set. 
 
-1.  Download the tutorials (Go to https://github.com/jack461/CMGS-Tutorials, click on the green "Code" button, and select "Download ZIP"), and install the folder *GM-OCTO-2024* anywhere on your system.
-2.  In *GM-OCTO-2024*, *Remove* the file **Effects**
-3.  Copy the **CMGS** (or **CMGS-main**) folder into the project directory, and rename it **Effects**.
-4.  Double-click "GM-Octo.RPP"
-5.  This runs REAPER, but in the "System Log" of the plug-in, you get a lot of error messages, like "ERR: 2405 can't compile ..."
-6.  Drag and drop the "GM-Octo.RPP" file in the "GameMaster" window. Thanks to this action, the plug-in can determine the location of the needed files.
-7.  Save the project and quit REAPER.
-8.  Run REAPER again. This time, the configuration files are found, and the last script displays ** GAME MASTER / SESSION OCTO READY **.
+1.  Download the tutorials (Go to https://github.com/jack461/CMGS-Tutorials, click on the green "Code" button, and select "Download ZIP"), unzip the file, and put the folder *GM-Octo-2024* (in *Tuto-01*) anywhere on your system.
+2.  Double-click "GM-Octo.RPP".
+3.  This runs REAPER, but in the "System Log" of the GamePlayer (track "GAME PLAYER"), you get error messages: the plug-in still uses the paths of the computer where the project was saved, and does not find its initialisation script (*Data/Scripts/GM_mSL_ini.mSL*, the "Profile") nor the samples (*Data/WAVES*).
+4.  Drag and drop the "GM-Octo.RPP" file into the window of the GamePlayer. Thanks to this action, the plug-in can determine the location of the needed files.
+5.  Save the project and quit REAPER.
+6.  Run REAPER again. This time, the Profile and the samples are found, and the last line of the System Log displays ** GAME MASTER / SESSION OCTO READY **.
 
 ## Exploring
 
@@ -54,21 +52,19 @@ Les groupes 0, 1, 33 sont des variantes de ceux-ci, utilisant un mélange des fi
 
 ## Installation
 
-Vous avez besoin du plug-in **CMGS**, que vous pouvez télécharger depuis le répertoire https://github.com/jack461/CMGS, et bien sûr d'une version récente de **REAPER** (v7.25 ou ultérieure), téléchargeable depuis http://reaper.fm/download.php.
+Vous avez besoin d'une version récente de **REAPER** (v7.25 ou ultérieure), téléchargeable depuis http://reaper.fm/download.php, et de **CMGS**, installé comme l'explique son README (https://github.com/jack461/CMGS#installation) : les dossiers **CMGS-effects** et **CMGS-data** vont dans les dossiers *Effects* et *Data* du dossier des ressources de REAPER.
 
-Vérifiez d'abord que votre carte son est reconnue par REAPER (ouvrez le menu "Options > Réglage...", et vérifiez "Audio > Périphérique").
+Vérifiez d'abord que votre carte son est reconnue par REAPER (ouvrez le menu "Options > Préférences...", et vérifiez "Audio > Périphérique").
 
 > [!IMPORTANT]
 > Certains paramètres peuvent empêcher le GameMaster de fonctionner correctement. Vérifiez dans les "Préférences REAPER" que dans "Audio", les deux options "Fermer le périphérique audio à l'arrêt..." ne sont *pas* définies, et dans "Audio > Lecture" que "Exécuter les effets à l'arrêt" est défini.
 
-1. Téléchargez les tutoriels (allez sur https://github.com/jack461/CMGS-Tutorials, cliquez sur le bouton vert "Code" et sélectionnez "Télécharger le ZIP") et installez le dossier *GM-OCTO-2024* n'importe où sur votre système.
-2. Dans *GM-OCTO-2024*, *Supprimez* le fichier **Effects**
-3. Copiez le dossier **CMGS** (ou **CMGS-main**) dans le répertoire du projet et renommez-le **Effects**.
-4. Double-cliquez sur "GM-Octo.RPP"
-5. Cela exécute REAPER, mais dans le "System Log" du plug-in, vous obtenez de nombreux messages d'erreur, comme "ERR: 2405 can't compile ..."
-6. Faites glisser et déposez le fichier "GM-Octo.RPP" dans la fenêtre "GameMaster". Grâce à cette action, le plug-in peut déterminer l'emplacement des fichiers nécessaires.
-7. Enregistrez le projet et quittez REAPER.
-8. Exécutez à nouveau REAPER. Cette fois, les fichiers de configuration sont trouvés et le dernier script affiche ** GAME MASTER / SESSION OCTO READY **.
+1. Téléchargez les tutoriels (allez sur https://github.com/jack461/CMGS-Tutorials, cliquez sur le bouton vert "Code" et sélectionnez "Download ZIP"), décompressez le fichier, et placez le dossier *GM-Octo-2024* (dans *Tuto-01*) n'importe où sur votre système.
+2. Double-cliquez sur "GM-Octo.RPP".
+3. Cela lance REAPER, mais dans le "System Log" du GamePlayer (piste "GAME PLAYER"), vous obtenez des messages d'erreur : le plug-in utilise encore les chemins de l'ordinateur où le projet a été enregistré, et ne trouve ni son script d'initialisation (*Data/Scripts/GM_mSL_ini.mSL*, le "Profile") ni les échantillons (*Data/WAVES*).
+4. Faites glisser et déposez le fichier "GM-Octo.RPP" dans la fenêtre du GamePlayer. Grâce à cette action, le plug-in peut déterminer l'emplacement des fichiers nécessaires.
+5. Enregistrez le projet et quittez REAPER.
+6. Relancez REAPER. Cette fois, le Profile et les échantillons sont trouvés, et la dernière ligne du "System Log" affiche ** GAME MASTER / SESSION OCTO READY **.
 
 ## Exploration
 

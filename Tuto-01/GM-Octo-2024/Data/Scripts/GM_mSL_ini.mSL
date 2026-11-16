@@ -1,11 +1,755 @@
 /*
+   Game Player mSL Initialization file (the "Profile") - GM-Octo-2024
+   A single file : all the tables (they are reset before this file is run), then the Studio pad.
+   Built 2026-10-20 from config-Clips, config-ClSets, config-HP, config-SModes, config-PModes,
+   config-Banks, config-Sensors and the previous GM_mSL_ini.mSL (kept as GM_mSL_ini.mSL.bak).
+*/
+
+var s = stralloc();
+var id;
+var z;
+
+//#################### Clips (from config-Clips.mSL) ####################
+
+/*
+    Configuration des Clips
+*/
+id = "Configuration des Clips";
+sprintf(s, "%s START", id);
+GM_Log(s);
+
+z = table(data(
+//=========================================
+
+Table Clips Clear
+
+ClipDir "WAVES"   // relative : in the "Data" folder of the project
+
+
+
+
+
+End
+
+
+//=========================================
+));
+
+
+sprintf(s, "%s END - Res: %d", id, z);
+GM_Log(s);
+
+//#################### ClipSets (from config-ClSets.mSL) ####################
+
+/*
+    Configuration des ClipSets
+*/
+id = "Clipsets";
+// sprintf(s, "%s START", id); GM_Log(s);
+
+z = table(data(
+
+//=========================================
+    Table ClipSets Clear
+        FIdent 10001
+        Set 100 RRR  PLUC
+        ClRange 0 9999
+        Set 101 RRR  PLUC
+        ClRange 0 9999
+    End
+
+//=========================================
+));
+
+sprintf(s, "%s - ClipSets - Res: %d", id, z);
+GM_Log(s);
+
+//#################### HP (from config-HP.mSL) ####################
+
+/*
+   Configuration des Haut-Parleurs - Démo CNSM - 2023-03-04
+*/
+
+
+table(data(
+//=========================================
+
+Table HPConf Clear
+
+// 8 HP Mono
+101 1 1 0
+102 1 2 0
+103 1 3 0
+104 1 4 0
+105 1 5 0
+106 1 6 0
+107 1 7 0
+108 1 8 0
+
+// Pair
+201 2 1 2 0
+202 2 3 4 0
+203 2 5 6 0
+204 2 7 8 0
+205 2 5 3 0
+206 2 4 6 0
+207 2 1 2 0
+208 2 8 7 0
+209 2 3 1 0
+210 2 2 4 0
+211 2 6 8 0
+212 2 7 5 0
+
+213 2 1 8 0
+214 2 2 7 0
+215 2 4 5 0
+216 2 6 3 0
+
+// Triplet
+301 3 1 2 4 0
+302 3 2 4 6 0
+303 3 4 6 8 0
+304 3 6 8 7 0
+305 3 8 7 5 0
+306 3 7 5 3 0
+307 3 5 3 1 0
+308 3 3 1 2 0
+
+// 4 HP
+401 4 1 2 3 4 0
+402 4 8 7 6 5 0
+403 4 5 3 7 1 0
+404 4 4 6 2 8 0
+405 4 1 2 7 8 0
+406 4 5 3 6 4 0
+407 4 1 4 8 5 0
+408 4 2 6 7 3 0
+
+// 5 HP
+501 5 1 7 4 3 8 0
+502 5 2 5 6 1 7 0
+503 5 4 3 8 2 5 0
+504 5 6 1 7 4 3 0
+505 5 8 2 5 6 1 0
+506 5 7 4 3 8 2 0
+507 5 5 6 1 7 4 0
+508 5 3 8 2 5 6 0
+
+
+// 6 HP
+601 6 2 4 6 7 5 3 0
+602 6 4 6 8 5 3 1 0
+603 6 6 8 7 3 1 2 0
+604 6 8 7 5 1 2 4 0
+605 6 1 2 4 6 8 7 0
+606 6 2 4 6 8 7 5 0
+607 6 4 6 8 7 5 3 0
+608 6 6 8 7 5 3 1 0
+609 6 8 7 5 3 1 2 0
+610 6 7 5 3 1 2 4 0
+611 6 5 3 1 2 4 6 0
+612 6 3 1 2 4 6 8 0
+
+// 7 HP
+701 7 1 2 4 6 8 7 5 0
+702 7 2 4 6 8 7 5 3 0
+703 7 4 6 8 7 5 3 1 0
+704 7 6 8 7 5 3 1 2 0
+705 7 8 7 5 3 1 2 4 0
+706 7 7 5 3 1 2 4 6 0
+707 7 5 3 1 2 4 6 8 0
+708 7 3 1 2 4 6 8 7 0
+
+//  8 HP
+801 8 1 2 3 4 5 6 7 8 0
+802 8 1 2 4 6 8 7 5 3 0
+803 8 2 1 3 5 7 8 6 4 0
+804 8 7 8 5 6 3 4 1 2 0
+
+//  Unused
+901 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1001 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1101 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1201 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1301 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1401 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1501 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1601 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1701 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1801 8 1 2 3 4 5 6 7 8 0
+
+// Unused
+1901 8 1 2 3 4 5 6 7 8 0
+
+
+// 1910 16 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  0
+End
+
+//=========================================
+));
+
+
+GM_Log("HP Conf - Octo - Loaded");
+
+//#################### Space Modes (from config-SModes.mSL) ####################
+
+/*
+    Configuration des Modes d'Espace - 2023-03-04
+*/
+table(data(
+
+//=========================================
+    Table SpModes Clear
+        FIdent 10002
+
+        SMd  0
+            HPSet  500
+            HPCnt  2 5
+        SMd  1
+            HPSet  100
+            HPFlags  1
+        SMd  2
+            HPSet  200
+            HPFlags  4
+        SMd  3
+            HPSet  300
+            HPCnt  1  3
+            HPFlags  4
+        SMd  4
+            HPSet  300
+            HPCnt  2 3
+            HPFlags  4
+        SMd  5
+            HPSet  400
+            HPCnt  3 4
+            HPFlags  4
+        SMd  6
+            HPSet  400
+            HPCnt  4 4
+            HPFlags  4
+        SMd  7
+            HPSet  500
+            HPCnt  4 5
+            HPFlags  4
+        SMd  8
+            HPSet  500
+            HPCnt  5 5
+        SMd  9
+            HPSet  600
+            HPCnt  5 6
+            HPFlags  4
+        SMd  10
+            HPSet  600
+            HPCnt  6
+            HPFlags  4
+        SMd  11
+            HPSet  700
+            HPCnt  7
+            HPFlags  4
+        SMd  12
+            HPSet  800
+            HPCnt  8
+            HPFlags  4
+        SMd  20
+            HPSet  201
+            HPCnt  2
+            HPFlags  4
+
+	SMd 21
+	    HPSet 1900
+	    HPCnt 8 8
+	    HPFlags 0x10
+
+    End
+
+//=========================================
+));
+
+
+GM_Log("Space Modes - Octo - Loaded");
+
+//#################### Play Modes (from config-PModes.mSL) ####################
+
+/*
+    Configuration Modes de Jeu - 2020-03-04
+*/
+
+table(data(
+//=========================================
+
+Table PlModes
+     Clear
+     FIdent 10001
+
+        PMd  0    // Mode n°0
+           Kmd  KmdPlay
+           PVol  0
+
+        PMd  1    // Mode n°1
+           Kmd  KmdPlay
+           PVol  0
+
+        PMd  2    // Mode n°2
+           Kmd  KmdPlay
+           PVol  -9  0
+
+        PMd  3    // Mode n°3
+           Kmd  KmdPlay
+           PVol  -6  0
+
+        PMd  4    // Mode n°4
+           Kmd  KmdPlay
+           Speed  0.8  1
+           PVol  -6  0
+
+        PMd  5
+           Kmd  KmdPlay
+           Speed  0.5  1.2  0.5
+           PVol  -6  0
+
+        PMd  6
+           Kmd  KmdPlay
+           Speed  0.5  1.2  0.5
+           PVol  -6  0
+
+        PMd  7
+           Kmd  KmdPlay
+           Speed  0.5  1.2  0.5
+           PVol  -6  0
+
+        PMd  8
+           Kmd  KmdPlay
+           Speed  0.1  2  0.5
+           PVol  -6  0
+
+        PMd  9
+           Kmd  KmdLoop
+           Speed  1  1
+           GDepth  1  2
+           PVol  -6  0
+
+        PMd  10
+           Kmd  KmdLoop
+           Speed  0.8  1
+           Gsize  5  8.5
+           GDepth  3  4
+           PVol  -6  0
+
+        PMd  11
+           Kmd  KmdLoop
+           Speed  0.5  2  0.5
+           Gsize  3  3.5
+           GDepth  5  8
+           PVol  -6  0
+
+        PMd  12
+           Kmd  KmdLoop
+           Speed  0.5  2  0.5
+           Gsize  0.5  0.8
+           GDepth  10  16
+           PVol  -6  0
+
+        PMd  20
+            Kmd  KmdPlay
+            PVol  -12  0
+
+        PMd  21
+            Kmd  KmdPlay
+            PVol 0
+            Speed 0.5 1.5 0.5
+
+        PMd  22
+            Kmd  KmdPlay
+            PVol 0
+            Speed 0.4 0.8 1
+
+        PMd 27
+            Kmd KmdLoop
+            Gsize 0.002 0.004
+            GDepth 10
+            Speed 0.5 1.5 0.5
+
+        PMd 28
+            Kmd KmdLoop
+            Gsize 0.003 0.007
+            GDepth 10
+            Speed 0.5 1.5 0.5
+
+        PMd 29
+            Kmd KmdLoop
+            Gsize 0.004 0.010
+            GDepth 10
+            Speed 0.4 1.5 0.5
+
+        PMd 30
+            Kmd KmdLoop
+            Gsize 0.010 0.050
+            GDepth 9
+            Speed 0.3 1 0.5
+
+        PMd 31
+            Kmd KmdLoop
+            Gsize 0.045 0.085
+            GDepth 8
+            Speed 0.3 1 0.5
+
+        PMd 32
+            Kmd KmdLoop
+            Gsize 0.085 0.220
+            GDepth 6
+            Speed 0.3 1 0.5
+
+        PMd 33
+            Kmd KmdLoop
+            Gsize 0.305 0.620
+            GDepth 5
+            Speed 0.3 1 0.5
+
+        PMd 34
+            Kmd KmdLoop
+            Gsize 0.700 1.00
+            GDepth 4
+            Speed 0.3 1 0.5
+
+        PMd 35
+            Kmd KmdLoop
+            Gsize 1.10 2.20
+            GDepth 3
+            Speed 0.3 1 0.5
+
+       PMd 36
+            Kmd KmdLoop
+            Gsize 2.500 5.500
+            GDepth 3
+            Speed 0.3 0.8 0.5
+
+       PMd 37
+            Kmd KmdLoop
+            Gsize 4.500 8.500
+            GDepth 2
+            Speed 0.2 0.6 0.9
+
+       PMd 44
+            Kmd  KmdLoop
+            Speed  0.2  1.3  0.4
+            Gsize  0.02  0.08
+            GDepth  6  12
+            PVol  -12  -6
+
+       PMd 45
+            Kmd  KmdLoop
+            Speed  0.2  0.7  0.9
+            Gsize  0.12  0.25
+            GDepth  4  8
+            PVol  -6  -3
+
+    End
+
+
+//=========================================
+));
+
+
+GM_Log("Play Modes - Octo - Loaded");
+
+//#################### Banks (from config-Banks.mSL) ####################
+
+/*
+    Configuration des Banques
+*/
+
+
+table(data(
+//=========================================
+
+Table Banks Clear
+
+
+
+    Partiel 1 SpM 20 PlM 1
+
+    Partiel 2 SpM 20 PlM 36
+
+    Partiel 3  SpM 20 PlM 35
+
+    Partiel 4  SpM 20 PlM 34
+
+    Partiel 5  SpM 20 PlM 33
+
+    Partiel 6  SpM 20 PlM 32
+
+    Partiel 7 SpM 20 PlM 31
+
+    Partiel 8 SpM 20 PlM 30
+
+    Partiel 9 SpM 20 PlM 29
+
+    Partiel 'a' SpM 20 PlM 28
+
+    Partiel 'b' SpM 20 PlM 27
+
+
+Grp  0 //  dummy group 0
+
+Bnk  0  Set 100  SpM 1  PlM 0
+Bnk  1  Set 101  SpM 3  PlM 1
+Bnk  2  Set 100  SpM 8  PlM 7
+Bnk  3  Set 101  SpM 12  PlM 10
+
+
+Grp  1
+Bnk  0  Set 100  SpM 1  PlM 44
+Bnk  1  Set 101  SpM 2  PlM 37
+Bnk  2  Set 100  SpM 3  PlM 35
+Bnk  3  Set 101  SpM 5  PlM 30
+Bnk  4  Set 100  SpM 6  PlM 21
+Bnk  5  Set 101  SpM 7  PlM 8
+Bnk  6  Set 100  SpM 8  PlM 4
+Bnk  7  Set 101  SpM 10  PlM 1
+
+
+
+Grp  3 //  Gilles Roussi
+Bnk  1  Clps  2100  2105
+Bnk  2  Clps  2106  2111
+Bnk  3  Clps  2112  2117
+Bnk  4  Clps  2118  2123
+Bnk  5  Clps  2124  2129
+Bnk  6  Clps  2130  2135
+Bnk  7  Clps  2136  2141
+Bnk  8  Clps  2142  2147
+Bnk  9  Clps  2148  2153
+Bnk  10  Clps  2154  2158
+Bnk  11  Clps  2159  2163
+Bnk  12  Clps  2164  2167
+
+
+Grp  7 //  Diego Losa
+Bnk  1  Clps  2501  2505
+Bnk  1  Clps  2501  2505  PlM  15
+Bnk  2  Clps  2518  2521  PlM  18
+Bnk  3  Clps  2510  2515
+Bnk  3  Clps  2510  2515  PlM  17
+Bnk  4  Clps  2506  2510
+Bnk  4  Clps  2510  2515  PlM  20
+Bnk  5  Clps  2511  2513
+Bnk  5  Clps  2516  2517  PlM  19
+Bnk  6  Clps  2505  2512
+Bnk  6  Clps  2510  2515  PlM  21
+Bnk  7  Clps  2513  2515
+Bnk  7  Clps  2520  2525  PlM  18
+Bnk  9  Clps  2522  2523  PlM  18
+Bnk  9  Clps  2524  2525  PlM  16
+Bnk  10  Clps  2518  2520
+Bnk  10  Clps  2517  PlM  18
+Bnk  11  Clps  2501  2504
+Bnk  11  Clps  2502  2504
+Bnk  11  Clps  2516  2519
+Bnk  11  Clps  2518  2519
+Bnk  12  Clps  2510  2516  PlM  16
+
+
+
+
+Grp  13 // Francis Valéry
+Bnk  1  Clps  3100  3102
+Bnk  2  Clps  3103  3107
+Bnk  3  Clps  3108  3111
+Bnk  4  Clps  3112  3137
+Bnk  6  Clps  3138  3145
+Bnk  8  Clps  3146  3153
+Bnk  11  Clps  3154  3156
+
+Grp  14 // Alain Girardot
+Bnk  2  Clps  3200  3230
+Bnk  9  Clps  3201  3206
+Bnk  12  Clps  3201  3206
+Bnk  7  Clps  3221  3230
+
+Grp  20 // Alain Girardot
+Bnk  2  Clps  3250  3253
+Bnk  4  Clps  3281
+Bnk  8  Clps  3250  3253  PlM  20
+Bnk  10  Clps  3281  PlM  18
+Bnk  10  Clps  3281  PlM  19
+Bnk  12  Clps  3250  3253  PlM  21
+Bnk 27  Clps 3200 3230 SpM 1 PlM 27
+Bnk 30  Clps 3231 3299 SpM 2 PlM 30
+
+
+Grp  15 // Jean-Jacques Girardot
+Bnk  2  Clps  3321  3330
+Bnk  6  Clps  3321  3330
+Bnk  12  Clps  3300  3303
+Bnk  11  Clps  3300  3303
+Bnk  8  Clps  3300
+Bnk  9  Clps  3301  3310 PlM 36
+Bnk  7  Clps  3311  3323
+Bnk  1  Clps  3300  3303
+Bnk  5  Clps  3300  3330 PlM 33 SpM 1
+Bnk  3  Clps  3300  3399 PlM 35 SpM 2
+Bnk  4  Clps  3300  3399
+Bnk 27  Clips 3300 3399  SpM 1 PlM 27
+Bnk 30  Clips 3300 3399  SpM 1 PlM 30
+Bnk 32  Clips 3300 3399  SpM 4 PlM 32
+
+
+
+Grp  33 // Essai JJG sur 3 clips
+Bnk  7  Clps  3311  3313  SpM  6
+Bnk  11  Clps  3311  3313  SpM  12
+Bnk  8  Clps  3311  3313
+Bnk  11  Clps  3311 PlM  44
+Bnk  12  Clps  3311  3313  PlM  45
+Bnk 27  Clps 3311 3313 SpM 1 PlM 27
+Bnk 29  Clps 3311 3313 SpM 1 PlM 29
+
+
+    End
+
+
+//=========================================
+));
+
+
+
+GM_Log("Banks - Octo - Loaded");
+
+//#################### Sensors (from config-Sensors.mSL) ####################
+
+/*
+   Configuration des Senseurs
+*/
+
+id = "Configuration des Senseurs 2x2";
+sprintf(s, "%s START", id);
+GM_Log(s);
+
+z = table(data(
+//=========================================
+
+Table Sensors  // Cet en-tête est obligatoire pour définir la table des sensors
+Clear          // facultatif, mais conseillé : réinitialise la table des sensors
+
+MMode  0
+
+    Enter  SetPMd  3   SetSMd  7 // when entering Mode 0, set play mode and space mode
+
+
+DefSeq  1  2  DoKmd  SetMaxP  2  SensPadX  1  MIDAddDu  ShowPad  //    => Midi Mode 2
+DefSeq  2  1  DoKmd  SetMaxP  3  SensPadX  4  MIDAddDu  ShowPad // SensLok2 5 20
+
+
+
+DefSeq  1  DoKmd   PlayRnd 7300 7301 7302 7303 7304 -1
+DefSeq  2  DoKmd   PlayClip  7305
+DefSeq  3  DoKmd   PlayClip  7306
+DefSeq  4  DoKmd   PlayClip  7302
+
+// =======================
+MMode  1 // Mode MIDI 1
+
+
+DefSeq  1  2  DoKmd  SetMaxP  2  SensPadX  2  MIDAddDu  ShowPad  //    => Midi Mode 2
+DefSeq  2  1  DoKmd  SetMaxP  3  SensPadX  0  MIDAddDu  ShowPad // SensLok2 5 20
+
+
+DefSeq  1  DoKmd   TempDur 7  PlayClip  1114
+DefSeq  3  DoKmd   TempDur 7  PlayClip  1115
+DefSeq  4  DoKmd   TempDur 7  PlayClip  1230
+DefSeq  2  DoKmd   TempDur 7  PlayClip  1216
+
+
+// =======================
+MMode  2 // Mode MIDI 2
+
+DefSeq  2  1  DoKmd  SetMaxP  3  SensPadX  1  MIDAddDu  ShowPad
+//DefSeq  4  1  DoKmd  SetMaxP  2  SensPadX  0  MIDAddDu  ShowPad
+DefSeq  1  2  DoKmd  SetMaxP  2  SensPadX  3  MIDAddDu  ShowPad  //    => Midi Mode 2
+
+DefSeq  1  DoKmd   TempVol  0  PlayClip  7322  //
+DefSeq  2  DoKmd   TempVol  0  PlayClip  7321
+DefSeq  3  DoKmd   TempVol  0  PlayClip  7320
+DefSeq  4  DoKmd   TempVol  0  PlayClip  7314
+
+
+// =======================
+MMode  3
+
+DefSeq  2  1  DoKmd  SetMaxP  3  SensPadX  2  MIDAddDu  ShowPad
+//DefSeq  4  1  DoKmd  SetMaxP  2  SensPadX  0  MIDAddDu  ShowPad
+DefSeq  1  2  DoKmd  SetMaxP  2  SensPadX  4  MIDAddDu  ShowPad
+
+
+
+DefSeq  1  DoKmd   PlayClip  0828
+DefSeq  3  DoKmd   PlayClip  0547
+DefSeq  4  DoKmd   PlayClip  0534
+DefSeq  2  DoKmd   PlayClip  0510
+
+
+
+// =======================
+MMode  4
+
+DefSeq  2  1  DoKmd  SetMaxP  3  SensPadX  3  MIDAddDu  ShowPad
+//DefSeq  4  1  DoKmd  SetMaxP  2  SensPadX  0  MIDAddDu  ShowPad
+DefSeq  1  2  DoKmd  SetMaxP  2  SensPadX  0  MIDAddDu  ShowPad
+
+DefSeq  1  DoKmd   TempVol  0  PlayClip  7318  //
+DefSeq  2  DoKmd   TempVol  0  PlayClip  7317
+DefSeq  3  DoKmd   TempVol  0  PlayClip  7316
+DefSeq  4  DoKmd   TempVol  0  PlayClip  7315
+
+
+// =======================
+MMode  5
+
+DefSeq  4  1  DoKmd  SetMaxP  2  SensPadX  0  MIDAddDu  ShowPad
+
+DefSeq  1  DoKmd   TempVol  0  PlayClip  7018  //
+DefSeq  2  DoKmd   TempVol  0  PlayClip  7017
+DefSeq  3  DoKmd   TempVol  0  PlayClip  7016
+DefSeq  4  DoKmd   TempVol  0  PlayClip  7015
+
+DefSeq  1  DoKmd   TempVol  0  PlayClip  7018  //
+DefSeq  2  DoKmd   TempVol  0  PlayClip  7017
+DefSeq  3  DoKmd   TempVol  0  PlayClip  7016
+DefSeq  4  DoKmd   TempVol  0  PlayClip  7015
+
+End
+
+//=========================================
+));
+
+sprintf(s, "%s END - Res: %d", id, z);
+GM_Log(s);
+
+//#################### Studio pad (from the previous GM_mSL_ini.mSL) ####################
+
+/*
    Game Player mSL Initialization file
 */
 
 
-var s;
-
-s = stralloc();
 /*
 sprintf(s, "Current thread %d", GM_Addr(`CThread));
 GM_Log(s);
@@ -36,7 +780,7 @@ pv[12] = 109; pv[13] = 116; pv[14] = 133; pv[15] = 146;
 
 // use "clip "for the next 16
 ii = 16; loop(16,
-    pf[ii] = 5; 
+    pf[ii] = 5;
     pl[ii] = ph[ii] =  3300 + ii - 16;
     ii += 1;
 );
