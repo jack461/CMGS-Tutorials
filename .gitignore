@@ -2,3 +2,4 @@
 *.RPP-bak
 *.swp
 *~
+syslog-*
